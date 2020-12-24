@@ -1,7 +1,7 @@
 terraform {
      required_providers {
       petstore = {
-      source  = "hashicorp/petstore"
+      source  = "terraform-in-action/petstore"
       version = "~> 1.0"
     }
      }

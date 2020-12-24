@@ -1,13 +1,16 @@
 package petstore
 
 import (
+	"fmt"
+	"strings"
+
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	sdk "github.com/terraform-in-action/go-petstore"
 )
 
-func dataSourcePSPets() *schema.Resource {
+func dataSourcePSPetIDs() *schema.Resource {
 	return &schema.Resource{
-		Read: resourcePSPetRead,
+		Read: dataSourcePSPetIDsRead,
 
 		Schema: map[string]*schema.Schema{
 			"names": {
@@ -24,7 +27,7 @@ func dataSourcePSPets() *schema.Resource {
 	}
 }
 
-func dataSourcePSPetsRead(d *schema.ResourceData, meta interface{}) error {
+func dataSourcePSPetIDsRead(d *schema.ResourceData, meta interface{}) error {
 	names := make(map[string]bool)
 	for _, name := range d.Get("names").([]interface{}) {
 		names[name.(string)] = true
@@ -43,5 +46,7 @@ func dataSourcePSPetsRead(d *schema.ResourceData, meta interface{}) error {
 		}
 	}
 	d.Set("ids", ids)
+	id := fmt.Sprintf("%d", schema.HashString(strings.Join(ids, "")))
+	d.SetId(id)
 	return nil
 }

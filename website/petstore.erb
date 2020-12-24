@@ -1,0 +1,35 @@
+<% wrap_layout :inner do %>
+    <% content_for :sidebar do %>
+        <div class="docs-sidebar hidden-print affix-top" role="complementary">
+            <ul class="nav docs-sidenav">
+                <li<%= sidebar_current("docs-home") %>>
+                    <a href="/docs/providers/index.html">All Providers</a>
+                </li>
+
+                <li<%= sidebar_current("docs-petstore-index") %>>
+                    <a href="/docs/providers/petstore/index.html">Petstore Provider</a>
+                </li>
+
+                <li<%= sidebar_current("docs-petstore-datasource") %>>
+                    <a href="#">Data Sources</a>
+                    <ul class="nav nav-visible">
+                        <li<%= sidebar_current("docs-datasource-petstore-pet-ids") %>>
+                            <a href="/docs/providers/petstore/d/petstore_pet_ids.html">petstore_pet_ids</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li<%= sidebar_current("docs-tfe-resource") %>>
+                    <a href="#">Resources</a>
+                    <ul class="nav nav-visible">
+                        <li<%= sidebar_current("docs-resource-petstore-pet") %>>
+                            <a href="/docs/providers/petstore/r/petstore_pet.html">petstore_pet</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    <% end %>
+
+    <%= yield %>
+<% end %>

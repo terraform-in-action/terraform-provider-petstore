@@ -18,6 +18,10 @@ func Provider() *schema.Provider {
 			},
 		},
 
+		DataSourcesMap: map[string]*schema.Resource{
+			"petstore_pet_ids": dataSourcePSPetIDs(),
+		},
+
 		ResourcesMap: map[string]*schema.Resource{
 			"petstore_pet": resourcePSPet(),
 		},
