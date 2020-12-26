@@ -1,8 +1,6 @@
 package petstore
 
 import (
-	"fmt"
-
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	sdk "github.com/terraform-in-action/go-petstore"
 )
@@ -31,13 +29,6 @@ func resourcePSPet() *schema.Resource {
 			"age": {
 				Type:     schema.TypeInt,
 				Required: true,
-				ValidateFunc: func(val interface{}, key string) (warns []string, errs []error) {
-					v := val.(int)
-					if v < 0 {
-						errs = append(errs, fmt.Errorf("%q must be greater than 0, got: %d", key, v))
-					}
-					return
-				},
 			},
 		},
 	}

@@ -2,6 +2,7 @@ package petstore
 
 import (
 	"context"
+	"os"
 	"testing"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
@@ -30,6 +31,10 @@ func TestProvider_impl(t *testing.T) {
 }
 
 func testAccPreCheck(t *testing.T) {
+	if os.Getenv("PETSTORE_ADDRESS") == "" {
+		t.Fatal("PETSTORE_ADDRESS must be set for acceptance tests")
+	}
+
 	if diags := Provider().Configure(context.Background(), &terraform.ResourceConfig{}); diags.HasError() {
 		for _, d := range diags {
 			if d.Severity == diag.Error {
