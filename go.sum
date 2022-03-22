@@ -289,6 +289,8 @@ github.com/svanharmelen/jsonapi v0.0.0-20180618144545-0c0828c3f16d h1:Z4EH+5Effv
 github.com/svanharmelen/jsonapi v0.0.0-20180618144545-0c0828c3f16d/go.mod h1:BSTlc8jOjh0niykqEGVXOLXdi9o0r0kR8tCYiMvjFgw=
 github.com/terraform-in-action/go-petstore v0.1.1 h1:4JAU5/yNPID3cEn0mPKr1/s1pUzwzDr08GFJuBC6syE=
 github.com/terraform-in-action/go-petstore v0.1.1/go.mod h1:RNZtB2ya0PDPRWnmVfcfQfZGA22CXIlE3y5ZdWNz+ow=
+github.com/terraform-in-action/go-petstore v0.1.2 h1:XIvf+LX/Qsa02bso8H+RrOjyBWwuGz1VO/1QudVVyHA=
+github.com/terraform-in-action/go-petstore v0.1.2/go.mod h1:RNZtB2ya0PDPRWnmVfcfQfZGA22CXIlE3y5ZdWNz+ow=
 github.com/ulikunitz/xz v0.5.5/go.mod h1:2bypXElzHzzJZwzH67Y6wb67pO62Rzfn7BSiF4ABRW8=
 github.com/ulikunitz/xz v0.5.8 h1:ERv8V6GKqVi23rgu5cj9pVfVzJbOqAY2Ntl88O6c2nQ=
 github.com/ulikunitz/xz v0.5.8/go.mod h1:nbz6k7qbPmH4IRqmfOplQw/tblSgqTqBwxkY0oWt/14=
